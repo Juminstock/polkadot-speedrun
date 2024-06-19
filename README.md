@@ -1,2 +1,2 @@
-# polkadot-speedrun
-Intensive technical workshop focused on the certification of Polkadot technology.
+<h1 align="center">Polkadot SpeedRun 🏃🏻‍➡️</h1>
+<p>Intensive technical workshop focused on the certification of Polkadot technology.</p>
