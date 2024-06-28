@@ -49,7 +49,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Contenido',
+          label: 'Documentación',
         },
         {
           to: '/blog', 
@@ -62,12 +62,12 @@ const config: Config = {
           position: 'left'
         },
         {
-          to: '/', 
+          to: '/404', 
           label: 'Leaderboard', 
           position: 'left'
         },
         {
-          to: '/', 
+          to: '/404', 
           label: 'Roadmap', 
           position: 'left'
         },
