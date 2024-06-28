@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Polkadot SpeedRun 🏃🏻‍➡️',
   tagline: 'Intensive technical workshop focused on Polkadot',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   url: 'https://your-docusaurus-site.example.com',
 
@@ -39,7 +39,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/speedrun-social-card.jpg',
     navbar: {
-      title: 'Polkadot SpeedRun',
+      title: 'Polkadot SpeedRun |',
       logo: {
         alt: 'Polkadot SpeedRun logo',
         src: 'img/logo.png',
@@ -49,11 +49,30 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Contenido',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: '/blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
+        {
+          to: '/', 
+          label: 'Comunidad', 
+          position: 'left'
+        },
+        {
+          to: '/', 
+          label: 'Leaderboard', 
+          position: 'left'
+        },
+        {
+          to: '/', 
+          label: 'Roadmap', 
+          position: 'left'
+        },
+        {
+          href: 'https://github.com/Juminstock/polkadot-speedrun',
           label: 'GitHub',
           position: 'right',
         },
