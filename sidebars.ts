@@ -5,8 +5,8 @@ const sidebars: SidebarsConfig = {
     'intro',
     {
       type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
+      label: 'Tutorials',
+      items: ['tutorial-basics/inkathon-project'],
     },
   ],
 };

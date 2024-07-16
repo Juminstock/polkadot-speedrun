@@ -52,7 +52,7 @@ const config: Config = {
           label: 'Documentación',
         },
         {
-          to: '/blog', 
+          to: '/404', 
           label: 'Blog', 
           position: 'left'
         },
