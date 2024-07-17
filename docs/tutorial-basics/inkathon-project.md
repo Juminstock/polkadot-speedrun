@@ -22,6 +22,8 @@ Para llevar a cabo con éxito esta guía técnica, deberás realizar las siguien
 - Instalar cargo contract (usa esta [guía de Parity](https://github.com/use-ink/cargo-contract))
 - Instalar un nodo local de desarrollo (opcional, puedes usar [swanky-node](https://github.com/inkdevhub/swanky-node) o [substrate-node](https://github.com/paritytech/substrate-contracts-node)) 
 
+![inkathon-stack](../../static/img/inkathon-stack-diagram.png)
+
 ## Construir el proyecto
 
 ### 1. Clonar el repositorio
@@ -56,6 +58,21 @@ El repositorio trae consigo un smart contract plantilla para testing, pasa a com
 ```bash title="/inkathon"
 cd contracts
 ```
+:::warning
+
+Dentro de la carpeta `contracts` hay un archivo `rust-toolchain`, abrélo e introduce este código:
+
+```toml
+[toolchain]
+channel = "1.69.0"
+components = [ "rustfmt", "rust-src" ]
+targets = [ "wasm32-unknown-unknown" ]
+profile = "minimal"
+```
+
+Esto evitará que te topes con problemas de compilación y de versionado con Rust y cargo contract. Puedes seguir el tutorial sin problema.
+
+:::
 
 ```bash title="/inkathon/contracts"
 pnpm run build
@@ -63,7 +80,7 @@ pnpm run build
 
 Luego, puedes iniciar un nodo local para desarrollo. El proyecto de ink!athon trae uno consigo al momento de clonar el repositorio, o sencillamente podrías usar uno de los que descargaste externamente. Usemos el [substrate-node](https://github.com/paritytech/substrate-contracts-node) que trae ink!athon. Para usarlo solo debes correr el siguiente comando:
 
-```bash
+```bash title="/inkathon/contracts"
 pnpm run node
 ```
 
@@ -73,7 +90,7 @@ El output se debería ver de esta manera:
 
 Finalmente, pasemos a deployar el contrato a través del siguiente comando:
 
-```bash
+```bash title="/inkathon/contracts"
 pnpm run deploy
 ```
 
@@ -87,3 +104,28 @@ Ten presente que el deploy del contrato lo hicimos en el nodo local de `substrat
 
 :::
 
+## Conectar el frontend a la red
+La herramienta de ink!athon nos provee de un frontend preconfigurado y estilizado, por defecto viene conectado a la red de `aleph-zero testnet` pero podemos configurarla y es justo lo que haremos en este momento. Abre el archivo `.env.local` que esta dentro de la carpeta `frontend` y setea el valor actual de la variable `NEXT_PUBLIC_DEFAULT_CHAIN` por `development`.
+
+Finalmente, reinicia el servidor de Next.js y ya podrás interactuar con tu nodo local y los smart contracts desplegados en el. Deberías ver tu frontend algo similar a esto:
+
+![substrate-node-frontend](../../static/img/frontend-node-connect.png)
+
+## Desplegar el proyecto
+Finalmente, una vez que hayas construído y compilado nuestros contratos, modificado el frontend a las necesidades de nuestro proyecto y habiendo modificado la red para el deploy de los smart contracts, ¡Estamos listos para desplegar nuestro proyecto en Vercel! Para ello solo debemos posicionarnos en el root de nuestro proyecto y correr el comando:
+
+```bash title="/inkathon"
+vercel
+```
+
+Este comando iniciará un proceso de verificación y en caso que no la tengas conectada te pedirá que conectes tu cuenta de Vercel. Una vez realizado esto, solo deberás interactuar con el CLI de Vercel modificando unos pocos valores y aprobando otros. Finalizado este proceso, verás un output muy similar a este:
+
+![Vercel output](../../static/img/vercel-output.png)
+
+Si lo notas, el output final que dice `✅ Production` es un link, justo ese es el link de tu proyecto público desplegado en Vercel. ¡Felicidades! Con esto has finalizado con éxito este tutorial 🥳.
+
+:::info
+
+Fuente principal: https://github.com/scio-labs/inkathon
+
+:::
