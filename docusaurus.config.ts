@@ -51,26 +51,26 @@ const config: Config = {
           position: 'left',
           label: 'Documentación',
         },
-        {
-          to: '/404', 
-          label: 'Blog', 
-          position: 'left'
-        },
+        // {
+        //   to: '/404', 
+        //   label: 'Blog', 
+        //   position: 'left'
+        // },
         {
           to: 'https://t.me/+zcgKJHLSKd02ZTIx', 
           label: 'Comunidad', 
           position: 'left'
         },
-        {
-          to: '/404', 
-          label: 'Leaderboard', 
-          position: 'left'
-        },
-        {
-          to: '/404', 
-          label: 'Roadmap', 
-          position: 'left'
-        },
+        // {
+        //   to: '/404', 
+        //   label: 'Leaderboard', 
+        //   position: 'left'
+        // },
+        // {
+        //   to: '/404', 
+        //   label: 'Roadmap', 
+        //   position: 'left'
+        // },
         {
           href: 'https://github.com/Juminstock/polkadot-speedrun',
           label: 'GitHub',
